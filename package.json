@@ -12,7 +12,7 @@
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "npx prisma db push --skip-generate && next build"
+    "build": "npx prisma db push && npx prisma generate && next build"
   },
   "author": "",
   "license": "MIT",
