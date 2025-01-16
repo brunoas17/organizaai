@@ -1,3 +1,3 @@
-# meucelu
+# organiza-ai
 
-Marketplace para produtos Apple
+Sistema de fluxo de caixa para organização pessoal
