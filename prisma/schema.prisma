@@ -16,7 +16,7 @@ datasource db {
 
 model User {
   id    Int     @id @default(autoincrement())
-  jobTitle String
+  jobTitle String?
   email String  @unique
   name  String?
 }
