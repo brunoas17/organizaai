@@ -14,9 +14,7 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model User {
+model Newsletter {
   id    Int     @id @default(autoincrement())
-  jobTitle String?
   email String  @unique
-  name  String?
 }
