@@ -4,7 +4,7 @@
   "description": "Projeto de market place para produtos Apple",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && next dev",
+    "dev": "npm run services:up && npm run wait-for-postgres && npx prisma db push && next dev",
     "services:up": "docker compose -f infra/compose.yml up -d",
     "services:stop": "docker compose -f infra/compose.yml stop",
     "services:down": "docker compose -f infra/compose.yml down",
@@ -12,7 +12,8 @@
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "npx prisma db push && npx prisma generate && next build"
+    "build": "npx prisma db push && npx prisma generate && next build",
+    "wait-for-postgres": "node infra/scripts/wait-for-postgres.js"
   },
   "author": "",
   "license": "MIT",
