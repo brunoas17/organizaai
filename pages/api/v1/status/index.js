@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async function status(request, response) {
+  let varNotUsed;
   const updatedAt = new Date().toISOString();
 
   const databaseServerVersion =
