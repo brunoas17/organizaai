@@ -10,6 +10,7 @@
     "services:down": "docker compose -f infra/compose.yml down",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
+    "lint:eslint:check": "next lint",
     "test": "npm run services:up && npm run wait-for-postgres && npx prisma db push && concurrently -n next,jest --hide next -k -s command-jest \"next dev\" \"jest --runInBand\"",
     "test:watch": "jest --watchAll",
     "build": "npx prisma db push && npx prisma generate && next build",
@@ -27,6 +28,10 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "jest": "^29.7.0",
     "prettier": "^3.4.2",
     "prisma": "^6.1.0"
